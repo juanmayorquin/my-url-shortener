@@ -1,5 +1,5 @@
 import { nanoid } from "nanoid";
 
-export function generateCode(lenght = 6) {
-  return nanoid(lenght);
+export function generateCode(length = 4) {
+  return nanoid(length);
 }

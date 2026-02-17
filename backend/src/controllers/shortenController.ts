@@ -22,14 +22,23 @@ export async function createShortUrl(req: Request, res: Response) {
 
 export async function redirectToUrl(req: Request, res: Response) {
   const { code } = req.params;
+  console.log("Searching for code:", code);
   try {
     const target = await ShortenService.getByCode(code as string);
+    console.log("Found target:", target);
 
     if (!target) {
       return res.status(404).json({ error: "Not found" });
     }
-    return res.json(target);
+    
+    // Ensure URL has protocol
+    const url = target.startsWith("http://") || target.startsWith("https://")
+      ? target
+      : `https://${target}`;
+    
+    return res.json({url});
   } catch (error) {
+    console.error("Error:", error);
     return res.status(500).json({ error: `Internal server error.` });
   }
 }

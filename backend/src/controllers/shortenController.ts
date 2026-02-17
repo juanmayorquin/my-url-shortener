@@ -1,5 +1,6 @@
 import type { Request, Response } from "express";
 import { ShortenService } from "../services/shortenService.ts";
+import { Prisma } from "@prisma/client";
 
 export async function createShortUrl(req: Request, res: Response) {
   const { url, code } = req.body;
@@ -9,17 +10,18 @@ export async function createShortUrl(req: Request, res: Response) {
   }
 
   try {
-    console.log("Creating short url:", req.body);
     const shortUrl = await ShortenService.create(url, code);
     return res.json(shortUrl);
   } catch (error) {
-    return res.status(500).json({ error: "Internal server error" });
+    if (error instanceof Prisma.PrismaClientKnownRequestError) {
+      return res.status(400).json({error: "Custom code already exists. Try a different one"})
+    }
+    return res.status(500).json({ error: `Internal server error.` });
   }
 }
 
 export async function redirectToUrl(req: Request, res: Response) {
   const { code } = req.params;
-  console.log("Requesting url for:", req.params.code);
   try {
     const target = await ShortenService.getByCode(code as string);
 
@@ -28,6 +30,6 @@ export async function redirectToUrl(req: Request, res: Response) {
     }
     return res.json(target);
   } catch (error) {
-    return res.status(500).json({ error: "Internal server error" });
+    return res.status(500).json({ error: `Internal server error.` });
   }
 }

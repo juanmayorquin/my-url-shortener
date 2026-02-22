@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { createShortUrl, redirectToUrl } from "../controllers/shortenController.ts";
+import { createShortUrl, redirectToUrl } from "../controllers/shortenController";
 
 
 const router : Router = Router();

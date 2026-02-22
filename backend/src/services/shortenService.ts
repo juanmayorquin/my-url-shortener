@@ -1,4 +1,4 @@
-import { generateCode } from "../utils/generateCode.ts";
+import { generateCode } from "../utils/generateCode";
 import "dotenv/config";
 import { PrismaPg } from "@prisma/adapter-pg";
 import { Prisma, PrismaClient } from "@prisma/client";

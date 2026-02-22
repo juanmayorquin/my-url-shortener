@@ -1,6 +1,6 @@
 import express from "express";
 import cors from "cors";
-import shortenRouter from "./routes/shorten.ts";
+import shortenRouter from "./routes/shorten";
 import dotenv from "dotenv";
 
 dotenv.config();

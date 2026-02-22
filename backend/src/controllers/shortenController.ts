@@ -1,5 +1,5 @@
 import type { Request, Response } from "express";
-import { ShortenService } from "../services/shortenService.ts";
+import { ShortenService } from "../services/shortenService";
 import { Prisma } from "@prisma/client";
 
 export async function createShortUrl(req: Request, res: Response) {

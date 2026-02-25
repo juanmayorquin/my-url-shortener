@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 import { generateCode } from "../utils/generateCode";
+=======
+import { generateCode } from "../utils/generateCode.js";
+>>>>>>> 2eb0761 (fix: update import paths to use .js extensions and adjust start script in package.json)
 import "dotenv/config";
 import { PrismaPg } from "@prisma/adapter-pg";
 import { Prisma, PrismaClient } from "@prisma/client";

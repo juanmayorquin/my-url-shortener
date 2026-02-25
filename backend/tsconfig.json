@@ -3,7 +3,7 @@
   "compilerOptions": {
     // File Layout
     // "rootDir": "./src",
-    // "outDir": "./dist",
+    "outDir": "./dist",
 
     // Environment Settings
     // See also https://aka.ms/tsconfig/module
@@ -40,7 +40,10 @@
     "noUncheckedSideEffectImports": true,
     "moduleDetection": "force",
     "skipLibCheck": true,
+<<<<<<< HEAD
     "moduleResolution": "bundler",
     "outDir": "./dist"
+=======
+>>>>>>> 2eb0761 (fix: update import paths to use .js extensions and adjust start script in package.json)
   }
 }

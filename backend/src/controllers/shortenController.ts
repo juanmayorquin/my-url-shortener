@@ -1,5 +1,9 @@
 import type { Request, Response } from "express";
+<<<<<<< HEAD
 import { ShortenService } from "../services/shortenService";
+=======
+import { ShortenService } from "../services/shortenService.js";
+>>>>>>> 2eb0761 (fix: update import paths to use .js extensions and adjust start script in package.json)
 import { Prisma } from "@prisma/client";
 
 export async function createShortUrl(req: Request, res: Response) {

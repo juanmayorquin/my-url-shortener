@@ -101,14 +101,15 @@ BASE_URL="http://localhost:4000"
 docker compose up -d
 ```
 
-### 4. Run Prisma migrations
-```bash
-npx prisma migrate deploy
-```
-
-### 5. Install dependencies
+### 4. Install dependencies
 ```bash
 npm install
+```
+
+### 5. Run Prisma migrations
+```bash
+npx prisma generate
+npx prisma migrate deploy
 ```
 
 ### 6. Start the server

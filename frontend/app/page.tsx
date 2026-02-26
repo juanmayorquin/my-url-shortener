@@ -34,11 +34,7 @@ export default function Home() {
           Mayo<span className="text-orange-600">dev</span>&apos;s URL Shortener
         </h1>
         <p className="text-neutral-400">
-          A simple URL Shortener that you can use for your projects, for free. A
-          simple URL Shortener that you can use for your projects, for free. A
-          simple URL Shortener that you can use for your projects, for free. A
-          simple URL Shortener that you can use for your projects, for free. A
-          simple URL Shortener that you can use for your projects, for free.
+          A free, open-source URL shortener designed for personal and community projects. This lightweight, self-hosted tool transforms long, complex links into concise, shareable URLs, providing an essential, no-cost solution for link management, tracking, and improved user experience across all your web projects. 
         </p>
         <form onSubmit={handleSubmit} className="space-y-4">
           <div className="flex flex-col gap-2">
